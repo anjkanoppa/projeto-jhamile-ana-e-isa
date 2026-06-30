@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<!DOCTYPE html> <!--doctype html diz pro navegador que o html5 ta sendo usado-->
+<html lang="pt-BR"> <!--declarando que a linguagem do site é portugues-->
+<head>
+<meta charset="UTF-8"> <!--perimtindo o uso de caracteres estranhos como o 'ç'-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--usadno uma função q permite q o site seja usado no celular-->
+<title>Trabalho CEP</title>
+<style> /*começando a usar css para deixar bonito*/
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*mexendo nas cores e na fonte*/
+background-color: #53524e;
+color: #333;
+margin: 0; /*tirando a margem automatica*/
+padding: 20px; /*aumentadno o espaço pra 20 pixeis*/
+display: flex; /*deixando o body flexivel*/
+justify-content: center; /*centralizando*/
+}
+.container { /*caixa branca do centro*/
+width: 100%;
+max-width: 600px; /*limitando o tamanho maximo em 600 pixeis*/
+background: white;
+padding: 30px;
+border-radius: 16px; /*arredondando as bordas pra ficar bonito*/
+box-shadow: 0 4px 15px rgba(0,0,0,0.05); /*criando a sombra pra ficar bonito*/
+}
+h1 { /*titulo*/
+text-align: center; /*centralizando*/
+color: #4a5c50;
+margin-bottom: 25px;
+}
+
+/* abassss */
+.abas {
+display: flex; /*deixando os botoes lado a lado*/
+gap: 8px; /*decalrando o espaço entre elas*/
+margin-bottom: 20px;
+border-bottom: 2px solid #e0e0e0;
+padding-bottom: 10px;
+overflow-x: auto; /*arrumando pra usar no celular caso as abas nao caibam*/
+}
+.botao-aba {
+background: none;
+border: none;
+padding: 10px 16px;
+cursor: pointer; /*mudando o estilo do ponteiro quando passa o mouse em cima*/
+font-size: 14px;
+font-weight: 600;
+color: #888;
+border-radius: 8px;
+transition: all 0.3s ease; /*suavizando mudança de cor*/
+white-space: nowrap;
+}
+.botao-aba:hover {
+background-color: #f0ede6; /*quando passa o mouse em cima*/
+color: #4a5c50;
+}
+.botao-aba.ativo {
+background-color: #4a5c50; /*mudando a cor quando selecionado*/
+color: white;
+}
+
+/* mais abas */
+.conteudo-aba {
+display: none; /*escondendo todas e deixando apenas a selecionada aparecendo*/
+animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(5px); }
+to { opacity: 1; transform: translateY(0); } /*funçao que faz a animação acontecer, transparente baixo para 100% visivel e posição normal*/
+}
+h2 {
+color: #4a5c50;
+font-size: 20px;
+}
+ul {
+padding-left: 20px; /*definindo espaçamento*/
+line-height: 1.8; /*definindo altura entre linhas*/
+}
+
+.link-externo { /*transformando texto comum em links selecionaveis*/
+display: inline-block;
+margin-top: 15px;
+padding: 10px 20px;
+background-color: #8fa89b;
+color: white;
+text-decoration: none; /*removendo o sublinhado do link*/
+border-radius: 6px; /*arredondando as bordas*/
+font-weight: bold;
+transition: background 0.2s;
+}
+.link-externo:hover {
+background-color: #6e8579;
+}
+</style>
+</head>
+<body>
+
+<div class="container"> <!--tudo fica dentro desse container-->
+<h1>Ana, Jhamile e Isabela</h1>
+
+<!-- lugar de selecionar abas -->
+<div class="abas">
+<button class="botao-aba ativo" onclick="abrirAba(event, 'Emocional')"> Emocional</button> <!--chamando a funçao abrirAba(funçao explicada la em baixo)-->
+<button class="botao-aba" onclick="abrirAba(event, 'Pessoal')"> Pessoal</button> <!--chamando a funçao abrirAba(funçao explicada la em baixo)-->
+<button class="botao-aba" onclick="abrirAba(event, 'Fisico')"> Físico</button> <!--chamando a funçao abrirAba(funçao explicada la em baixo)-->
+<button class="botao-aba" onclick="abrirAba(event, 'Espiritual')"> Espiritual</button> <!--chamando a funçao abrirAba(funçao explicada la em baixo)-->
+</div>
+
+<!--cada aba é uma div, cada div tem um id e uma classe, o JS procura o id pessoal para mostrar somente a aba selcionada-->
+<!--dentro da div temos: titulo <h1>, paragrafo <p>, lista <ul>, itens da lista <li>, link <a href="">-->
+
+<!-- a emocional -->
+<div id="Emocional" class="conteudo-aba" style="display: block;">
+<h2>Autocuidado Emocional</h2>
+<p>O autocuidado emocional é cuidar dos sentimentos e aprender a lidar com eles de forma saudável. Reservar momentos para relaxar, expressar emoções e praticar a gentileza consigo mesmo ajuda a reduzir o estresse e melhorar o bem-estar.</p>
+<ul>
+<li>Escrever um diário de como esta se sentindo.</li>
+<li>Reserve alguns minutos para relaxar.</li>
+<li>Converse com alguem de confiança.</li>
+<li>Pratique a gratidão.</li>
+</ul>
+<a href="https://google.com" target="_blank" class="link-externo">espaço para link</a>
+</div>
+
+<!-- a pessoal -->
+<div id="Pessoal" class="conteudo-aba">
+<h2>Autocuidado Pessoal</h2>
+<p>O autocuidado pessoal envolve conhecer a si mesmo, fortalecer a autoestima e investir em atividades que trazem felicidade. Desenvolver hobbies e reconhecer seus valores ajuda no crescimento pessoal.
+</p>
+<ul>
+<li>Descubra novos hobbies.</li>
+<li>Defina metas pessoais.</li>
+<li>Valorize suas conquistas.</li>
+<li>Faça algo que voce gosta.</li>
+</ul>
+<a href="https://google.com" target="_blank" class="link-externo">espaço para link</a>
+</div>
+
+<!-- a fisico -->
+<div id="Fisico" class="conteudo-aba">
+<h2>Autocuidado Físico</h2>
+<p>Cuidar do corpo é essencial para manter a saúde e a disposição. Dormir bem, praticar exercícios, manter uma alimentação equilibrada e beber bastante água contribuem para uma vida mais saudável.</p>
+<ul>
+<li>Beba água regularmente.</li>
+<li>Durma pelo menos 8 horas por noite.</li>
+<li>Pratique atividades físicas.</li>
+<li>Faça alongamentos.</li>
+</ul>
+<a href="https://google.com" target="_blank" class="link-externo">espaço para link</a>
+</div>
+
+<!-- a espiritual -->
+<div id="Espiritual" class="conteudo-aba">
+<h2>Autocuidado Espiritual</h2>
+<p>O autocuidado espiritual está relacionado à busca de propósito e equilíbrio interior. Isso pode acontecer por meio da meditação, da reflexão, da conexão com a natureza ou de práticas ligadas à fé.</p>
+<ul>
+<li>Medite alguns minutos por dia.</li>
+<li>Passe mais tempo em contato com a natureza.</li>
+<li>Reflita sbre seus objetivos.</li>
+<li>Pratique a gratidão.s</li>
+</ul>
+<a href="https://google.com" target="_blank" class="link-externo">espaço para link</a>
+</div>
+</div>
+
+<!--tudo entre esse comentario e meu comentario que explica as divs-->
+<!--sao as divs de cada aba-->
+
+<script>
+// funçãozinha em js pra funcionar as aba de verdade
+function abrirAba(evt, nomeAba) { //criando a funçao abrirAba, ela recebe a evt(botao clicado) e nomeAba(qual aba sera aberta)
+var i, conteudo, botoes; //declarando variaveis para usar no resto da funça
+
+// esconde as aba
+conteudo = document.getElementsByClassName("conteudo-aba"); //procurando todas as abas
+for (i = 0; i < conteudo.length; i++) { //loop de for que percorre todas as abas
+conteudo[i].style.display = "none"; //escondendo todas as abas
+}
+
+// removendo a classe ativo em todos os botoes
+botoes = document.getElementsByClassName("botao-aba"); //procurando todos os botoes
+for (i = 0; i < botoes.length; i++) { //loop que percorre todos os botoes
+botoes[i].className = botoes[i].className.replace(" ativo", ""); //removendo a classe ativo assim nenhum fica "selecionado"
+}
+
+// mostra a aba atual clicada e mostra ativo nela
+document.getElementById(nomeAba).style.display = "block"; //procurando a aba pelo e id e fazendo ela aparecer
+evt.currentTarget.className += " ativo"; //adicionando a classe ativo somente no botao clicado
+}
+</script>
+
+</body>
+</html>
