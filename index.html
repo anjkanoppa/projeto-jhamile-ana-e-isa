@@ -93,30 +93,6 @@ margin: 0 auto;
 </div>
 </div>
 
-<!--tudo entre esse comentario e meu comentario que explica as divs-->
-<!--sao as divs de cada aba-->
-
-<script>
-// funçãozinha em js pra funcionar as aba de verdade
-function abrirAba(evt, nomeAba) { //criando a funçao abrirAba, ela recebe a evt(botao clicado) e nomeAba(qual aba sera aberta)
-var i, conteudo, botoes; //declarando variaveis para usar no resto da funça
-
-// esconde as aba
-conteudo = document.getElementsByClassName("conteudo-aba"); //procurando todas as abas
-for (i = 0; i < conteudo.length; i++) { //loop de for que percorre todas as abas
-conteudo[i].style.display = "none"; //escondendo todas as abas
-}
-
-// removendo a classe ativo em todos os botoes
-botoes = document.getElementsByClassName("botao-aba"); //procurando todos os botoes
-for (i = 0; i < botoes.length; i++) { //loop que percorre todos os botoes
-botoes[i].className = botoes[i].className.replace(" ativo", ""); //removendo a classe ativo assim nenhum fica "selecionado"
-}
-
-// mostra a aba atual clicada e mostra ativo nela
-document.getElementById(nomeAba).style.display = "block"; //procurando a aba pelo e id e fazendo ela aparecer
-evt.currentTarget.className += " ativo"; //adicionando a classe ativo somente no botao clicado
-}
 </script>
 
 </body>
